@@ -1,0 +1,205 @@
+//Comienza el Homming XY
+
+>>> G28  X-2.00 Y-5.00 Z-10.00
+Machine Type: Cartesian
+Probe: BLTOUCH
+Probe Offset X28.00 Y-33.00 Z-3.00 (Right-Front & Below Nozzle)
+Auto Bed Leveling: UBL (enabled)
+Z Fade: 10.00
+UBL Adjustment Z 0.000 ( 0.000)
+  current_position= X-2.00 Y-5.00 Z-10.00 : Leveling ON
+  current_position= X-2.00 Y-5.00 Z-10.00 : ...Now OFF
+  current_position= X-2.00 Y-5.00 Z-10.00 : sync_plan_position
+Raise Z (before homing) by 5.00
+>>> do_blocking_move_to  X-2.00 Y-5.00 Z-10.00
+>  X-2.00 Y-5.00 Z5.00
+<<< do_blocking_move_to  X-2.00 Y-5.00 Z5.00
+BLTouch Command :160
+BLTouch Command :90
+last_written_mode - 0
+config mode - OD
+>>> homeaxis(X)
+Home Fast: -453.00mm
+>>> do_homing_move  X-2.00 Y-5.00 Z5.00
+...(X, -453.00, [60.00])
+<<< do_homing_move  X-2.00 Y-5.00 Z5.00
+Move Away: 5.00mm
+>>> do_homing_move  X-2.00 Y-5.00 Z5.00
+...(X, 5.00, [60.00])
+<<< do_homing_move  X-2.00 Y-5.00 Z5.00
+Re-bump: -10.00mm
+>>> do_homing_move  X-2.00 Y-5.00 Z5.00
+...(X, -10.00, 30.00)
+<<< do_homing_move  X-2.00 Y-5.00 Z5.00
+>>> set_axis_is_at_home(X)
+Axis X home_offset = 0.00 position_shift = 0.00
+> home_offset[X] = 0.00
+  current_position= X-2.00 Y-5.00 Z5.00 :
+<<< set_axis_is_at_home(X)
+  current_position= X-2.00 Y-5.00 Z5.00 : sync_plan_position
+  current_position= X-2.00 Y-5.00 Z5.00 : > AFTER set_axis_is_at_home
+<<< homeaxis(X)
+>>> homeaxis(Y)
+Home Fast: -472.50mm
+>>> do_homing_move  X-2.00 Y-5.00 Z5.00
+...(Y, -472.50, [60.00])
+<<< do_homing_move  X-2.00 Y-5.00 Z5.00
+Move Away: 5.00mm
+>>> do_homing_move  X-2.00 Y-5.00 Z5.00
+...(Y, 5.00, [60.00])
+<<< do_homing_move  X-2.00 Y-5.00 Z5.00
+Re-bump: -10.00mm
+>>> do_homing_move  X-2.00 Y-5.00 Z5.00
+...(Y, -10.00, 30.00)
+<<< do_homing_move  X-2.00 Y-5.00 Z5.00
+>>> set_axis_is_at_home(Y)
+Axis Y home_offset = 0.00 position_shift = 0.00
+> home_offset[Y] = 0.00
+  current_position= X-2.00 Y-5.00 Z5.00 :
+<<< set_axis_is_at_home(Y)
+  current_position= X-2.00 Y-5.00 Z5.00 : sync_plan_position
+  current_position= X-2.00 Y-5.00 Z5.00 : > AFTER set_axis_is_at_home
+<<< homeaxis(Y)
+>>> home_z_safely  X-2.00 Y-5.00 Z5.00
+  current_position= X-2.00 Y-5.00 Z5.00 : sync_plan_position
+  destination= X122.00 Y188.00 Z5.00 : home_z_safely
+>>> do_blocking_move_to  X-2.00 Y-5.00 Z5.00
+>  X122.00 Y188.00 Z5.00
+<<< do_blocking_move_to  X122.00 Y188.00 Z5.00
+>>> homeaxis(Z)
+  current_position= X122.00 Y188.00 Z5.00 : Probe::set_deployed
+deploy: 1
+
+// Comienza la bajada del eje z
+
+Probe::do_z_raise(15.00)
+// Baja 
+>>> do_blocking_move_to  X122.00 Y188.00 Z5.00
+>  X122.00 Y188.00 Z18.00
+<<< do_blocking_move_to  X122.00 Y188.00 Z18.00
+BLTouch DEPLOY requested
+BLTouch Command :10
+BLTouch ALARM or TRIGGER after DEPLOY, recovering
+BLTouch Command :160
+BLTouch Command :90
+BLTouch Command :10
+BLTouch Command :90
+BLTouch Command :10
+BLTouch Recovery Failed
+Error:!! STOP called because of BLTouch error - restart with M999
+Error:!! STOP called because of BLTouch error - restart with M999
+
+Error:Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)
+Error:Printer stopped due to errors. Fix the error and use M999 to restart. (Temperature is reset. Set it after restarting)
+
+>>> do_blocking_move_to  X122.00 Y188.00 Z18.00
+>  X122.00 Y188.00 Z18.00
+<<< do_blocking_move_to  X122.00 Y188.00 Z18.00
+BLTouch DEPLOY requested
+BLTouch Command :10
+BLTouch ALARM or TRIGGER after DEPLOY, recovering
+BLTouch Command :160
+BLTouch Command :90
+BLTouch Command :10
+BLTouch Command :90
+BLTouch Command :10
+BLTouch Recovery Failed
+Error:!! STOP called because of BLTouch error - restart with M999
+Error:!! STOP called because of BLTouch error - restart with M999
+
+<<< home_z_safely  X122.00 Y188.00 Z18.00
+  current_position= X122.00 Y188.00 Z18.00 : sync_plan_position
+  current_position= X122.00 Y188.00 Z18.00 : Leveling OFF
+  current_position= X122.00 Y188.00 Z18.00 : ...Now ON
+  current_position= X122.00 Y188.00 Z18.00 : sync_plan_position
+<<< G28  X122.00 Y188.00 Z18.00
+echo:Settings Stored (669 bytes; crc 8475)
+Exception in thread Thread-35:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 500, in read
+    raise SerialException(
+serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/printrun/printcore.py", line 260, in _readline
+    line = self.printer.readline().decode('ascii')
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 509, in read
+    raise SerialException('read failed: {}'.format(e))
+serial.serialutil.SerialException: read failed: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3/dist-packages/printrun/printcore.py", line 347, in _listen
+    line = self._readline()
+  File "/usr/lib/python3/dist-packages/printrun/printcore.py", line 281, in _readline
+    if 'Bad file descriptor' in e.args[1]:
+IndexError: tuple index out of range
+Can't write to printer (disconnected ?):
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 537, in write
+    n = os.write(self.fd, d)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/printrun/printcore.py", line 672, in _send
+    self.printer.write((command + "\n").encode('ascii'))
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 571, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+
+Can't write to printer (disconnected ?):
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 537, in write
+    n = os.write(self.fd, d)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/printrun/printcore.py", line 672, in _send
+    self.printer.write((command + "\n").encode('ascii'))
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 571, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+
+Can't write to printer (disconnected ?):
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 537, in write
+    n = os.write(self.fd, d)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/printrun/printcore.py", line 672, in _send
+    self.printer.write((command + "\n").encode('ascii'))
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 571, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+
+Can't write to printer (disconnected ?):
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 537, in write
+    n = os.write(self.fd, d)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/printrun/printcore.py", line 672, in _send
+    self.printer.write((command + "\n").encode('ascii'))
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 571, in write
+    raise SerialException('write failed: {}'.format(e))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+
+Disconnecting after 4 failed writes.
+Disconnected.
